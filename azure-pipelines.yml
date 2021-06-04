@@ -12,13 +12,13 @@ pool:
 container: kuritsu/tf-aws:0.15
 
 steps:
-- name: TfVer
-  script: terraform --version
+- script: terraform --version
+  name: TfVer
 
-- name: TfPlan
-  script: terraform plan
+- script: terraform plan
+  name: TfPlan
   condition: not(contains(variables['build.sourceBranch'], 'refs/heads/main'))
 
-- name: TfApply
-  script: terraform apply
+- script: terraform apply
+  name: TfApply
   condition: contains(variables['build.sourceBranch'], 'refs/heads/main')
