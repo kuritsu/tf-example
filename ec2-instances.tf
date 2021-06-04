@@ -23,4 +23,10 @@ resource "aws_instance" "web" {
   tags = {
     Name = "web${count.index + 1}"
   }
+  user_data = <<EOD
+#!/bin/bash
+apt-get update -y
+apt-get install nginx -y
+EOD
+
 }
