@@ -4,7 +4,7 @@ USER root
 
 WORKDIR /tmp
 
-RUN apk add unzip git curl py3-pip
+RUN apk add bash unzip git curl py3-pip
 
 RUN pip3 install awscli
 
