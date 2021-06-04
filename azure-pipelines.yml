@@ -4,7 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- "*"
+
+pr:
+- "*"
 
 pool:
   vmImage: ubuntu-latest
@@ -13,12 +16,12 @@ container: kuritsu/tf-aws:0.15
 
 steps:
 - script: terraform --version
-  name: TfVer
+  name: Version
 
 - script: terraform plan
-  name: TfPlan
+  name: Plan
   condition: not(contains(variables['build.sourceBranch'], 'refs/heads/main'))
 
 - script: terraform apply
-  name: TfApply
+  name: Apply
   condition: contains(variables['build.sourceBranch'], 'refs/heads/main')
