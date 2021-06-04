@@ -12,7 +12,9 @@ pr:
 pool:
   vmImage: ubuntu-latest
 
-container: kuritsu/tf-aws:0.15
+container:
+  image: kuritsu/tf-aws:0.15
+  options: --entrypoint=/bin/cat
 
 steps:
 - script: terraform --version
