@@ -8,12 +8,9 @@ version: 0.2
 run-as: root
 
 phases:
-  version:
+  build:
     commands:
       - terraform --version
       - terraform init
-
-  apply:
-    commands:
       - terraform plan
       - terraform apply
