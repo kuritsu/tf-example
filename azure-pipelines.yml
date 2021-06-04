@@ -9,7 +9,13 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: ubuntu:18.04
+container: kuritsu/tf-aws:0.15
 
 steps:
-- script: printenv
+- script: terraform --version
+
+- script: terraform plan
+  condition: not(contains(variables['build.sourceBranch'], 'refs/heads/main'))
+
+- script: terraform apply
+  condition: contains(variables['build.sourceBranch'], 'refs/heads/main')
