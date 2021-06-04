@@ -23,14 +23,14 @@ steps:
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
-    TF_rds_password: $(RDS_PASSWORD)
+    TF_VAR_rds_password: $(RDS_PASSWORD)
 
 - script: terraform plan
   name: Plan
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
-    TF_rds_password: $(RDS_PASSWORD)
+    TF_VAR_rds_password: $(RDS_PASSWORD)
 
 - script: terraform apply -auto-approve
   name: Apply
@@ -38,4 +38,4 @@ steps:
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
-    TF_rds_password: $(RDS_PASSWORD)
+    TF_VAR_rds_password: $(RDS_PASSWORD)
