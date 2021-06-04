@@ -14,4 +14,4 @@ RUN unzip terraform_0.15.5_linux_amd64.zip
 
 RUN chmod a+x terraform && mv terraform /usr/bin
 
-ENTRYPOINT [ "/bin/cat" ]
+ENTRYPOINT [ "/bin/bash" ]
