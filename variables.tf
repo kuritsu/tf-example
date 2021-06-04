@@ -7,4 +7,5 @@ variable instance_count {
 variable subnet_id {
   type = string
   description = "Subnet ID to create the instances."
+  default = "subnet-xyz"
 }

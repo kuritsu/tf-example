@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- "*"
+
+pr:
+- "*"
+
+pool:
+  vmImage: ubuntu-latest
+
+container: kuritsu/tf-aws:0.15
+
+steps:
+- script: terraform --version
+  name: Version
+
+- script: terraform init
+  name: Init
+
+- script: terraform plan
+  name: Plan
+  condition: not(contains(variables['build.sourceBranch'], 'refs/heads/main'))
+
+- script: terraform apply
+  name: Apply
+  condition: contains(variables['build.sourceBranch'], 'refs/heads/main')
