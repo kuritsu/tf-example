@@ -11,12 +11,12 @@ module "db" {
 
   name     = "demodb"
   username = "user"
-  password = "YourPwdShouldBeLongAndSecure!"
+  password = var.rds_password
   port     = "3306"
 
   iam_database_authentication_enabled = true
 
-  vpc_security_group_ids = ["sg-12345678"]
+  vpc_security_group_ids = ["sg-04f1d6a2db29ad162"]
 
   maintenance_window = "Mon:00:00-Mon:03:00"
   backup_window      = "03:00-06:00"
@@ -33,7 +33,7 @@ module "db" {
   }
 
   # DB subnet group
-  subnet_ids = ["subnet-12345678", "subnet-87654321"]
+  subnet_ids = ["subnet-0c263623fea564d5a", "subnet-01296cc7041a0dc3d"]
 
   # DB parameter group
   family = "mysql5.7"

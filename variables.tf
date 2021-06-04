@@ -9,3 +9,8 @@ variable subnet_id {
   description = "Subnet ID to create the instances."
   default = "subnet-xyz"
 }
+
+variable rds_password {
+  type = string
+  description = "Password for RDS"
+}
