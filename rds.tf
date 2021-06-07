@@ -16,7 +16,7 @@ module "db" {
 
   iam_database_authentication_enabled = true
 
-  vpc_security_group_ids = ["sg-04f1d6a2db29ad162"]
+  vpc_security_group_ids = ["sg-01bad3f16778cb6c9"]
 
   maintenance_window = "Mon:00:00-Mon:03:00"
   backup_window      = "03:00-06:00"
@@ -33,7 +33,7 @@ module "db" {
   }
 
   # DB subnet group
-  subnet_ids = ["subnet-0c263623fea564d5a", "subnet-01296cc7041a0dc3d"]
+  subnet_ids = ["subnet-0940167b0f8696a4b", "subnet-0c09f888a409246c2"]
 
   # DB parameter group
   family = "mysql5.7"
