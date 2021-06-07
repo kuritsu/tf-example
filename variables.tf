@@ -12,5 +12,5 @@ variable rds_password {
 variable subnet_ids {
   type = list(string)
   description = "All subnet IDs."
-  default = ["subnet-07531d4d50c0c33fb", "subnet-0a4706f32805f3060", "subnet-004206e701104b8aa"]
+  default = ["subnet-0940167b0f8696a4b", "subnet-0c09f888a409246c2"]
 }

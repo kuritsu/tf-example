@@ -28,9 +28,6 @@ resource "aws_instance" "web" {
 apt-get update -y
 apt-get install nginx -y
 EOD
-  lifecycle {
-    ignore
-  }
 }
 
 # Create a new load balancer
